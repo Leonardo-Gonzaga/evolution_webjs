@@ -11,6 +11,7 @@ import EventEmitter2 from 'eventemitter2';
 import { EvolutionStartupService } from './evolution/evolution.channel.service';
 import { BusinessStartupService } from './meta/whatsapp.business.service';
 import { BaileysStartupService } from './whatsapp/whatsapp.baileys.service';
+import { WebJSStartupService } from './whatsapp/whatsapp.webjs.service';
 
 type ChannelDataType = {
   configService: ConfigService;
@@ -85,6 +86,18 @@ export class ChannelController {
         data.prismaRepository,
         data.cache,
         data.chatwootCache,
+        data.baileysCache,
+        data.providerFiles,
+      );
+    }
+
+    if (instanceData.integration === Integration.WHATSAPP_WEB_JS) {
+      return new WebJSStartupService(
+        data.configService,
+        data.eventEmitter,
+        data.prismaRepository,
+        data.chatwootCache,
+        data.cache,
         data.baileysCache,
         data.providerFiles,
       );

@@ -253,6 +253,11 @@ export type S3 = {
   REGION?: string;
 };
 
+export type WhatsAppWebJS = {
+  HEADLESS: boolean;
+  PROXY: string;
+};
+
 export type CacheConf = { REDIS: CacheConfRedis; LOCAL: CacheConfLocal };
 export type Production = boolean;
 
@@ -280,9 +285,10 @@ export interface Env {
   DIFY: Dify;
   CACHE: CacheConf;
   S3?: S3;
+  WHATSAPP_WEB_JS: WhatsAppWebJS;
   AUTHENTICATION: Auth;
   PRODUCTION?: Production;
-}
+
 
 export type Key = keyof Env;
 
@@ -561,6 +567,11 @@ export class ConfigService {
           KEY: process.env.AUTHENTICATION_API_KEY || 'BQYHJGJHJ',
         },
         EXPOSE_IN_FETCH_INSTANCES: process.env?.AUTHENTICATION_EXPOSE_IN_FETCH_INSTANCES === 'true',
+      },
+      WHATSAPP_WEB_JS: {
+        HEADLESS: process.env?.WHATSAPP_WEB_JS_HEADLESS === 'true',
+        PROXY: process.env?.WHATSAPP_WEB_JS_PROXY || '',
+      },
       },
     };
   }
