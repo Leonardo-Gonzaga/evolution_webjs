@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <h1 align="center">Evolution Api</h1>
 
 <div align="center">
@@ -116,3 +117,6 @@ Please contact contato@atendai.com to inquire about licensing matters.
 Apart from the specific conditions mentioned above, all other rights and restrictions follow the Apache License 2.0. Detailed information about the Apache License 2.0 can be found at [http://www.apache.org/licenses/LICENSE-2.0](http://www.apache.org/licenses/LICENSE-2.0).
 
 © 2024 Evolution API
+=======
+# evolution_webjs
+>>>>>>> 08866785192645a43f1728a3d222f3ffe21fb943
